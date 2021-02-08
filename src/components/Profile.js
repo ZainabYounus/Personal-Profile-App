@@ -1,5 +1,6 @@
 import React from "react";
 import './Profile.css';
+import Education from './education';
 import {
     BrowserRouter as Router,
     Switch,
@@ -9,41 +10,58 @@ import {
 
 export default function Profile() {
     return (
-        <div id="container">
+        <Router>
+            <div id="container">
 
-            <header>
-                <div className="quoteoftheday">Profile</div>
-                <div className="name">Shah.</div>
-            </header>
+                <header>
+                    <div className="quoteoftheday">Profile</div>
+                    <div className="name">Zainab Khan.</div>
+                </header>
 
-            <article>
+                <article>
 
-                <div className="quote">
-                    <h1>A Coders Life: Problematic but Charismatic.</h1>
-                </div>
+                    <div className="quote">
+                        <h1>A Learner Eager to Take Learning Based Challenges.</h1>
+                    </div>
 
-                <div className="quoteby">
-                    <h4>Shahzaib Khan</h4>
-                </div>
+                    <div className="quoteby">
+                        <h4>Shahzaib Khan</h4>
+                    </div>
 
-            </article>
+                </article>
 
-            <footer>
+                <footer>
 
-                <div className="skills">
-                    <h6>Menu</h6>
-                    <ul>
-                        <li>Education</li>
-                        <li>Professional Experience</li>
-                        <li>Contact</li>
-                    </ul>
-                </div>
+                    <div className="skills">
+                        <h6>Menu</h6>
+                        <ul>
+                            <li> <Link to="/">Introduction</Link></li>
+                            <li><Link to="/education">Education</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
+                        </ul>
+                    </div>
 
-                <div className="content">
-                    <p>A technologist &amp; entrepreneur, specialized in using cutting-edge web technologies &amp; social-media strategies to bring products &amp; campaigns from concept to a reality. By profession a Computer &amp; Information System Engineer, who has been building &amp; implementing Information Systems for the last 10 years.</p>
-                </div>
+                    <Switch>
+                        <Route exact path="/">
+                            <div className="content">
+                                <p>A Fresh Graduate with a demonstrated history of working as intern in the fields of mobile development, Technical Documentation, etc, along with the voluntary experience with various non-profit organizations. Skilled in Android Development, Firebase, Web Development, Manual and Automated testing,  Microsoft Office, Java, PHP, JS, Python, HTML, CSS, etc. Strong communication, project planning, and time management skills with a Bachelor of Engineering - BE focused in Software Engineering from Mehran University Of Engineering and Technology, Jamshoro. </p>
+                            </div>
+                        </Route>
 
-            </footer>
-        </div>
+                        <Route exact path="/education">
+                            <Education/>
+                        </Route>
+
+                        <Route exact path="/contact">
+                            <div className="content">
+                                <p>Linkedin: <a href="https://www.linkedin.com/in/zainab-younus-khan/">https://www.linkedin.com/in/zainab-younus-khan/</a></p>
+                            </div>
+                        </Route>
+
+                    </Switch>
+
+                </footer>
+            </div>
+        </Router>
     );
 }
