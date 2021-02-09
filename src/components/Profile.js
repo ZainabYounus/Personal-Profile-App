@@ -1,6 +1,8 @@
 import React from "react";
 import './Profile.css';
 import Education from './education';
+import Experience from './Experience';
+import Contact from './contact';
 import {
     BrowserRouter as Router,
     Switch,
@@ -25,7 +27,7 @@ export default function Profile() {
                     </div>
 
                     <div className="quoteby">
-                        <h4>Shahzaib Khan</h4>
+                        <h4>Zainab Khan</h4>
                     </div>
 
                 </article>
@@ -37,6 +39,7 @@ export default function Profile() {
                         <ul>
                             <li> <Link to="/">Introduction</Link></li>
                             <li><Link to="/education">Education</Link></li>
+                            <li><Link to="/experience">Experience</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
                         </ul>
                     </div>
@@ -52,10 +55,12 @@ export default function Profile() {
                             <Education/>
                         </Route>
 
+                        <Route exact path="/experience">
+                            <Experience/>
+                        </Route>
+
                         <Route exact path="/contact">
-                            <div className="content">
-                                <p>Linkedin: <a href="https://www.linkedin.com/in/zainab-younus-khan/">https://www.linkedin.com/in/zainab-younus-khan/</a></p>
-                            </div>
+                            <Contact/>
                         </Route>
 
                     </Switch>

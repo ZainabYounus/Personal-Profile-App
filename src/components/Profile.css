@@ -98,6 +98,10 @@ article {
 .skills ul li a,.content,.content a {
     color:black;
 } 
+.content ul li{
+    color:black;
+    font-weight:600;
+}
 @media only screen and (max-width:1024px) {
     div#container {
         width: 310px;
